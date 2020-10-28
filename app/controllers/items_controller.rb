@@ -3,12 +3,15 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    @items = Item.all.order(id: :asc)
     @item = Item.new
     
   end
 
-  def delete
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path
   end
 
   def update
@@ -21,12 +24,20 @@ class ItemsController < ApplicationController
   end
 
   def mark
+    @item = Item.find(params[:id])
+    @item.marked = !@item.marked
+    @item.save
+    redirect_to items_path
   end
 
   def delete_all_marked
+    Item.where(marked: true).delete_all
+    redirect_to items_path
   end
 
   def delete_all
+    Item.delete_all
+    redirect_to items_path
   end
 
   def show
