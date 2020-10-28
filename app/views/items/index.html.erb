@@ -1,0 +1,17 @@
+<h1>Shopping list</h1>
+
+<% if @items %>
+  <% @items.each do |item| %>
+    <p><%= item.name %> x <%= item.quantity %></p>
+  <% end %>
+<% end %>
+
+
+ <div class="p-3">
+    <h4>Add a new item:</h4>
+    <%= simple_form_for @item do |f| %>
+      <%= f.input :name, wrapper_html: { class: 'form-name' } %>
+      <%= f.input :quantity, wrapper_html: { class: 'form-quantity' }, input_html: { value: '1' } %>
+      <%= f.button :submit, 'Add item' , class: "btn btn-secondary" %>
+    <% end %>
+  </div>
