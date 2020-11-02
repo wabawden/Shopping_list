@@ -12,3 +12,41 @@
 .item-marked {
   text-decoration: line-through;
 }
+
+.shopping-navbar {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.shopping-navbar-item-items {
+  background-color: crimson;
+  width: 50vw;
+  text-align: center;
+}
+
+.shopping-navbar-item-recipes {
+  background-color: pink;
+  width: 50vw;
+  text-align: center;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a:active {
+  text-decoration: none;
+  color: white;
+}
