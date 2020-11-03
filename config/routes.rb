@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+  get 'comments/update'
+  get 'comments/destroy'
+  get 'comments/index'
   get 'recipes/index'
   get 'recipes/destroy'
   get 'recipes/update'
@@ -6,6 +10,7 @@ Rails.application.routes.draw do
   get 'recipes/show'
   resources :items
   resources :recipes
+  resources :comments
   post '/items/:id/mark', to: 'items#mark', as: 'mark_item'
   post '/items/delete_all', to: 'items#delete_all', as: 'delete_all'
   post '/items/delete_all_marked', to: 'items#delete_all_marked', as: 'delete_all_marked'

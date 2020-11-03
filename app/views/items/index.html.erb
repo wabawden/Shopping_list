@@ -18,10 +18,19 @@
                 item_id: item.id do %>
         <i class="fas fa-check-circle"></i>
         <% end %>
+    <%= link_to new_comment_path(item.id),
+                query: "test" ,
+                item: item do %>
+        <i class="far fa-comment"></i>
+        <% end %>
     </h3>
+    <% if item.comments.length > 0 %>
+      <% item.comments.each do |comment| %>
+        <p><%= comment.content %></p>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>
-
 
 <%= link_to delete_all_marked_path,
                 method: :delete_all_marked,
