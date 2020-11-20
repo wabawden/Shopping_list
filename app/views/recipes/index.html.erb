@@ -23,9 +23,18 @@
 
 
  <div class="p-3">
-    <h4>Add a new recipe:</h4>
+    <h4>Add a new meal:</h4>
     <%= simple_form_for @recipe do |f| %>
       <%= f.input :name, wrapper_html: { class: 'form-name' } %>
       <%= f.button :submit, 'Add recipe' , class: "btn btn-secondary" %>
     <% end %>
   </div>
+
+
+  <%= link_to toggle_current_recipe_path(@recipe) do %>
+          <button class="btn btn-secondary">Add Previous Recipe</button>
+  <% end %>   
+
+
+
+
