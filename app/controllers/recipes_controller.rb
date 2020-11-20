@@ -15,12 +15,12 @@ class RecipesController < ApplicationController
   def update
   end
 
-  def toggle_current
-    @recipe = Recipe.find(params[:id])
-    @recipe.current = !@recipe.current
-    @recipe.save
-    redirect_to recipes_path
-  end
+  # def toggle_current
+  #   @recipe = Recipe.find(params[:id])
+  #   @recipe.current = !@recipe.current
+  #   @recipe.save
+  #   redirect_to recipes_path
+  # end
 
   def create
     @recipe = Recipe.new(recipe_params)
