@@ -7,8 +7,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    @recipe.current = false
-    @recipe.save
+    @recipe.delete
     redirect_to recipes_path
   end
 
