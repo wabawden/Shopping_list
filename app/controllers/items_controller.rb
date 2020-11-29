@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
   end
 
   def delete_all_marked
-    Item.where(marked: true).delete_all
+    Item.where(marked: true).destroy_all
     redirect_to items_path
   end
 
