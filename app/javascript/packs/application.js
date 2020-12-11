@@ -38,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
 
 var el = document.getElementById("items");
 Sortable.create(el, {
+  delay: 200,
   group: "localStorage-example",
   store: {
     /**
