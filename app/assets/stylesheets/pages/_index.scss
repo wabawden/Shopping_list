@@ -54,3 +54,19 @@ a:active {
 li.list-group-item {
   width: 80%;
 }
+
+li.list-group-item p {
+  margin-block-end: 0;
+}
+
+li.list-group-item i,
+li.list-group-item span {
+  font-size: 28px;
+  padding-right: 10px;
+}
+
+.recipe-comment,
+.item-comment {
+  color: dimgray;
+  font-size: smaller;
+}

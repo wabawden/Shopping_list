@@ -1,0 +1,6 @@
+<h4>Add a new comment for <%= @recipe.name %></h4>
+    <%= simple_form_for @recipe_comment do |f| %>
+      <%= f.input :content, wrapper_html: { class: 'form-name' } %>
+      <%= f.input :recipe_id, :as => :hidden, :input_html => { :value => @recipe.id } %>
+      <%= f.button :submit, 'Add comment' , class: "btn btn-secondary" %>
+    <% end %>

@@ -10,7 +10,17 @@
                 item_id: recipe.id,
                 data: { confirm: "Are you sure you want to clear this recipe?" } do %>
         <i class="far fa-trash-alt"></i>
-        <% end %>   
+        <% end %>
+        <%= link_to new_recipe_comment_path(recipe.id),
+                  query: "test" ,
+                  recipe: recipe do %>
+          <i class="far fa-comment"></i>
+          <% end %>
+      <% if recipe.recipe_comments.length > 0 %>
+        <% recipe.recipe_comments.each do |comment| %>
+          <p class="recipe-comment"><%= comment.content %></p>
+        <% end %>
+      <% end %>
     </h3>
   <% end %>
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_142052) do
+ActiveRecord::Schema.define(version: 2020_12_11_113303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 2020_11_03_142052) do
     t.boolean "marked"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipe_comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_recipe_comments_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -51,4 +59,5 @@ ActiveRecord::Schema.define(version: 2020_11_03_142052) do
   end
 
   add_foreign_key "comments", "items"
+  add_foreign_key "recipe_comments", "recipes"
 end

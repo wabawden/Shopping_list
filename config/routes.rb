@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :items
   resources :recipes
   resources :comments
+  resources :recipe_comments
   get '/recipes/:id/toggle_current', to: 'recipes#toggle_current', as: 'toggle_current_recipe'
   post '/items/:id/mark', to: 'items#mark', as: 'mark_item'
   post '/items/delete_all', to: 'items#delete_all', as: 'delete_all'
