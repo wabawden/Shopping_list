@@ -26,12 +26,12 @@
           <i class="far fa-comment"></i>
           <% end %>
       <% counter += 1 %>
-      </li>
       <% if item.comments.length > 0 %>
         <% item.comments.each do |comment| %>
           <p><%= comment.content %></p>
         <% end %>
       <% end %>
+      </li>
     <% end %>
   </ul>
 <% end %>
